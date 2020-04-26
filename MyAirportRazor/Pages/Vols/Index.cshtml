@@ -1,0 +1,72 @@
+﻿@page
+@model MyAirportRazor.IndexModelVol
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Vol[0].CIE)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Vol[0].LIG)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Vol[0].DHC)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Vol[0].PKG)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Vol[0].IMM)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Vol[0].PAX)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Vol[0].DES)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Vol) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CIE)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LIG)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DHC)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PKG)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IMM)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PAX)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DES)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ID_VOL">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID_VOL">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID_VOL">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

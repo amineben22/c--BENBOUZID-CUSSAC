@@ -1,0 +1,73 @@
+﻿@page
+@model MyAirportRazor.CreateModelBagage
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Bagage</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Bagage.ID_VOL" class="control-label"></label>
+                <select asp-for="Bagage.ID_VOL" class ="form-control" asp-items="ViewBag.ID_VOL"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Bagage.CODE_IATA" class="control-label"></label>
+                <input asp-for="Bagage.CODE_IATA" class="form-control" />
+                <span asp-validation-for="Bagage.CODE_IATA" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Bagage.DATE_CREATION" class="control-label"></label>
+                <input asp-for="Bagage.DATE_CREATION" class="form-control" />
+                <span asp-validation-for="Bagage.DATE_CREATION" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Bagage.CLASSE" class="control-label"></label>
+                <input asp-for="Bagage.CLASSE" class="form-control" />
+                <span asp-validation-for="Bagage.CLASSE" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Bagage.PRIORITAIRE" class="control-label"></label>
+                <input asp-for="Bagage.PRIORITAIRE" class="form-control" />
+                <span asp-validation-for="Bagage.PRIORITAIRE" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Bagage.STA" class="control-label"></label>
+                <input asp-for="Bagage.STA" class="form-control" />
+                <span asp-validation-for="Bagage.STA" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Bagage.SSUR" class="control-label"></label>
+                <input asp-for="Bagage.SSUR" class="form-control" />
+                <span asp-validation-for="Bagage.SSUR" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Bagage.DESTINATION" class="control-label"></label>
+                <input asp-for="Bagage.DESTINATION" class="form-control" />
+                <span asp-validation-for="Bagage.DESTINATION" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Bagage.ESCALE" class="control-label"></label>
+                <input asp-for="Bagage.ESCALE" class="form-control" />
+                <span asp-validation-for="Bagage.ESCALE" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

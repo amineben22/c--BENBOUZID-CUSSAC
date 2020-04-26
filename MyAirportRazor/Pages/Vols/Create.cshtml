@@ -1,0 +1,64 @@
+﻿@page
+@model MyAirportRazor.CreateModelVol
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Vol</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Vol.CIE" class="control-label"></label>
+                <input asp-for="Vol.CIE" class="form-control" />
+                <span asp-validation-for="Vol.CIE" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Vol.LIG" class="control-label"></label>
+                <input asp-for="Vol.LIG" class="form-control" />
+                <span asp-validation-for="Vol.LIG" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Vol.DHC" class="control-label"></label>
+                <input asp-for="Vol.DHC" class="form-control" />
+                <span asp-validation-for="Vol.DHC" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Vol.PKG" class="control-label"></label>
+                <input asp-for="Vol.PKG" class="form-control" />
+                <span asp-validation-for="Vol.PKG" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Vol.IMM" class="control-label"></label>
+                <input asp-for="Vol.IMM" class="form-control" />
+                <span asp-validation-for="Vol.IMM" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Vol.PAX" class="control-label"></label>
+                <input asp-for="Vol.PAX" class="form-control" />
+                <span asp-validation-for="Vol.PAX" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Vol.DES" class="control-label"></label>
+                <input asp-for="Vol.DES" class="form-control" />
+                <span asp-validation-for="Vol.DES" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
